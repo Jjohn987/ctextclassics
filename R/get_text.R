@@ -17,7 +17,7 @@ get_text <- function(book, chapter = NA) {
 
   if(!is.character(book)) stop("Book must be in lower case, hyphenated text, ie 'dao-de-jing'")
   if(is.numeric(chapter)) {
-    chapter <- book_list[c("book", "chapter")][book_list$book == book, ][chapter, 2]
+    chapter <- book_list[c("book", "chapter")][ctextclassics::book_list$book == book, ][chapter, 2]
   }
 
   if(book == "dao-de-jing") {
@@ -61,8 +61,8 @@ get_text <- function(book, chapter = NA) {
 #'
 get_books <- function(...) {
   books <- c(...)
-  if(!all(books %in% book_list$book)|length(books) == 0) {
-    missing_book <- setdiff(books, book_list$book)
+  if(!all(books %in% ctextclassics::book_list$book)|length(books) == 0) {
+    missing_book <- setdiff(books, ctextclassics::book_list$book)
     print(missing_book)
     stop("Books unable to be indexed. Print 'book_list$book' for details\n")
   }
@@ -78,7 +78,8 @@ get_books <- function(...) {
 #'
 get_calls <- function() {
   if(!exists("counter.env")) {
-    counter.env <<- new.env()
-    counter.env$i <- 0 }
+    counter.env <- new.env(parent = parent.frame())
+    counter.env$i <- 0
+  }
   return(counter.env$i)
 }
