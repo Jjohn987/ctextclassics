@@ -7,6 +7,7 @@
 \format{data.frame object.}
 \usage{
 book_list
+available books <- unique(book_list$book)
 }
 \description{
 An internal dataframe used for the get_text and get_books functions for downloading

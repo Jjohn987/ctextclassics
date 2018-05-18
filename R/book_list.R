@@ -5,6 +5,7 @@
 #' @name book_list
 #' @docType data
 #' @usage book_list
+#' available books <- unique(book_list$book)
 #' @format data.frame object.
 #' @keywords datasets
 NULL
