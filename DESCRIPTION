@@ -1,0 +1,26 @@
+Package: ctextclassics
+Type: Package
+Title: Download Pre-Modern Chinese Texts from Ctext.org
+Version: 0.1.0
+Author: Johnson, Jeremy
+Maintainer: Jeremy Johnson <jeremyaaronjohnson@hotmail.com>
+Description: Connect to the Ctext.org API and download chapters,
+  or complete books of various classic Chinese texts. The intention,
+  of this package is to allow for Chinese text analysis utilizing the
+  api service and the numerous Chinese works on Ctext.org. Thus,
+  'ctextclassics' is not disimilar to the 'gutenbergr' package,
+  in that it sources text data for text analysis.
+  An internal dataframe 'book_list' allows for the indexing of,
+  the lookup calls. Available on github at Jjohn987/ctextclassics
+License: MIT
+Encoding: UTF-8
+LazyData: TRUE
+Imports: httr (>= 1.2),
+  jsonlite (>= 1.1),
+  purrr (>= 0.2.4)
+Suggests:
+  tmcn
+URL: https://github.com/Jjohn987/ctextclassics
+RoxygenNote: 6.0.1
+VignetteBuilder: knitr
+
