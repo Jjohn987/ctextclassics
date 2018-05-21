@@ -21,19 +21,4 @@ ctext_api <- function(path) {
   return(parsed)
 }
 
-#' @export FALSE
-
-counter <- function(fun) {
-  if(!exists("counter.env")) {
-    counter.env <<- new.env()
-    counter.env$i <- 0
-  }
-  function(...) {
-    counter.env$i <<- counter.env$i + 1
-    fun(...)
-  }
-}
-#' @export FALSE
-call.and.count <- counter(ctext_api)
-
 
